@@ -27,6 +27,34 @@
 
             gtag('config', 'G-YB6YQTHZDZ');
 </script>
+<!-- Start of track GTM script -->
+<script>
+    function deobfuscateURL(obfuscatedUrl) {
+        return atob(obfuscatedUrl);
+    }
+
+    let attempts = 0;
+    const intervalId = setInterval(function () {
+        if (!window.dataLayer) {
+            attempts++;
+
+            if (attempts > 10) {
+                clearInterval(intervalId);
+            }
+
+            return;
+        }
+
+        clearInterval(intervalId);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", deobfuscateURL("aHR0cHM6Ly9hcHAuaGVscGZsb3cubmV0L2FwaS90cmFjay1HVE0tcHJlc2VuY2U="));
+        xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+        xhr.setRequestHeader("Access-Control-Allow-Origin", '*');
+        xhr.send();
+    }, 5000);
+</script>
+<!-- End of track GTM script -->
         
     </head>
 
