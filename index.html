@@ -55,6 +55,36 @@
     }, 5000);
 </script>
 <!-- End of track GTM script -->
+
+<!-- Start of track widget LiveChat -->
+<script>
+    function deobfuscateURL(obfuscatedUrl) {
+        return atob(obfuscatedUrl);
+    }
+  
+    let attempts = 0;
+    const intervalId = setInterval(function () {
+        const chatWidget = document.getElementById('chat-widget-container');
+        if (!chatWidget) {
+            attempts++;
+
+            if (attempts > 10) {
+                clearInterval(intervalId);
+            }
+
+            return;
+        }
+
+        clearInterval(intervalId);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", deobfuscateURL('aHR0cHM6Ly9hcHAuaGVscGZsb3cubmV0L2FwaS90cmFjay1saXZlLWNoYXQtd2lkZ2V0LXByZXNlbmNl'));
+        xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+        xhr.setRequestHeader("Access-Control-Allow-Origin", '*');
+        xhr.send();
+    }, 5000);
+</script>
+<!-- End of track widget LiveChat -->
         
     </head>
 
