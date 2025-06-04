@@ -2,6 +2,10 @@
 <html lang="en">
 
     <head>
+
+        <!-- N8N chat CSS-->
+        <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+        
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -89,6 +93,15 @@
     </head>
 
     <body>
+
+        <!-- N8N chat -->
+        <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+        createChat({
+            webhookUrl: 'https://n8n-dev.helpflow.net/webhook/8262e15e-1595-4bf1-a118-b763b7ab20c2/chat'
+        });
+        </script>
+        
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9DKVNV8"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
